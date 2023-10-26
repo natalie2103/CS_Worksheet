@@ -29,13 +29,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-#1a. Describe the data.
-    Shoe_size <- c(6.5,9.0,8.5,8.5,10.5,7.0,9.5,9.0,13.0,7.5,10.5,8.5,12.0,10.5,13.0,11.5,8.5,5.0,10.0,6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0)
-    Shoe_size
-    Height <- c(66.0,68.0,64.5,65.0,70.0,72.0,64.0,74.5,10.5,8.5,12.0,10.5,77.0,72.0,59.0,62.0,72.0,66.0,64.0,67.0,73.0,69.0,72.0,70.0,69.0,70.0,69.0,70.0)
-    Height
-    Gender = c("F","F","F","M","F","F","M","F","M","F","M","M","M","F","F","M","F","F","M","M","F","M","M","M")
-    summary(Shoe_size_height_data)
+
 
 
 #b. Create a subset by males and females with their corresponding shoe size and height.
