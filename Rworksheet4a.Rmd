@@ -1,0 +1,98 @@
+---
+title: "Rworksheet4a.Rmd"
+author: "Natalie Joy Loredo"
+date: "2023-10-26"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#1a. Describe the data.
+    
+#a
+  shoeSize_height_data <- data.frame(
+ 
+  shoe_Size = c (6.5,9.0,8.5,8.5,10.5,7.0,9.5,9.0,13.0,7.5,10.5,8.5,12.0,10.5,13.0,11.5,8.5,5.0,10.0,6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0),
+ 
+  height = c (66.0,68.0,64.5,65.0,70.0,64.0,70.0,71.0,72.0,64.0,74.5,67.0,71.0,71.0,77.0,72.0,59.0,62.0,72.0,66.0,64.0,67.0,73.0,69.0,72.0,70.0,69.0,70.0),
+ 
+  Gender = c ('F','F','F','F','M','F','F','F','M','F','M','F','M','M','M','M','F','F','M','F','F','M','M','F','M','M','M','M')
+)
+
+#a
+  summary(shoeSize_height_data)
+
+#b. Create a subset by males and females with their corresponding shoe size and height.
+   male_subset <- subset(shoeSize_height_data, gender =="M",select = c(shoe_Size,height))
+ 
+   female_subset <- subset(shoeSize_height_data,gender =="F",select = c(shoe_Size,height))
+   
+   print(male_subset)
+   print(female_subset)
+
+#c. Find the mean of shoe size and height of the respondents. Write the R scripts and its result.
+  mean_shoeSize <- mean(shoeSize_height_data$shoe_Size)
+  mean_height <- mean(shoeSize_height_data$height)
+
+  
+  cat(mean_shoeSize)
+  cat(mean_height)
+  
+#d. Is there a relationship between shoe size and ..height? Why?
+  Yes, there is a relationship between shoe size and height because shoe size is generally propotional to height.
+
+#Factors.....
+  Gender <- c('M','F','F','M')
+  factor_Gender <- factor(Gender)
+  factor_Gender
+  
+#2. Construct character vector months to a factor with factor() and assign the result to factor_months_vector. Print out factor_months_vector and assert that R prints out the factor levels below the actual values.
+  Months <- c("March","April","January","November","January",
+"September","October","September","November","August",
+"January","November","November","February","May","August","July","December","August","August","September","November","February",
+April")
+  factor_Months <- factor(Months)
+  factor_Months
+
+#3. Then check the summary() of the months_vector and factor_months_vector. Interpret the results of both vectors. Are they both equally useful in this case?
+  summary(factor_Months)
+#4. Create a vector and factor for the table below.
+  Direction <- c("East","West","North")
+  Direction
+  Frequency <- c(1,4,3)
+  Frequency
+  
+  factor_Direction <- factor(Direction)
+  factor_Direction
+  
+  new_order_data <- factor(factor_Direction,levels = c("East","West","North"))
+  print(new_order_data)
+  
+#5. Enter the data below in Excel with file name = import_march.csv
+
+
+#a. Import the excel file into the Environment Pane using read.table() function. Write the code.
+
+#b. View the dataset. Write the R scripts and its result.
